@@ -3,10 +3,11 @@ import {loadImage} from "./loaders.js";
 
 
 export function loadPlayerSprite () {
-    return loadImage ("/img/characters.png")
+    return loadImage ("/img/characters (1).png")
     .then  (image => {
         const sprites = new SpriteSheet (image, 16, 16);
-        sprites.define ("idle", 276, 44, 16, 16);
+        sprites.define ("idle", 0, 0, 16, 16);
+        //276, 44
         return sprites;
     });
 }
