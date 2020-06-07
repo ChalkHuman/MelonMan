@@ -3,7 +3,7 @@ import {loadImage} from "./loaders.js";
 
 
 export function loadPlayerSprite () {
-    return loadImage ("/img/characters (1).png")
+    return loadImage ("/img/characters.png")
     .then  (image => {
         const sprites = new SpriteSheet (image, 16, 16);
         sprites.define ("idle", 0, 0, 16, 16);
@@ -17,7 +17,7 @@ export function loadBackgroundSprites () {
     .then  (image => {
         const sprites = new SpriteSheet (image, 16, 16);
         sprites.defineTile ("ground", 0, 0);
-        sprites.defineTile ("sky", 3, 23);
+        sprites.defineTile ("sky", 1, 0);
         return sprites;
     });
 }
