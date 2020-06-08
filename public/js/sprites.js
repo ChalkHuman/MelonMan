@@ -7,7 +7,6 @@ export function loadPlayerSprite () {
     .then  (image => {
         const sprites = new SpriteSheet (image, 16, 16);
         sprites.define ("idle", 0, 0, 16, 16);
-        //276, 44
         return sprites;
     });
 }
