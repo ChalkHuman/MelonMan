@@ -11,6 +11,7 @@ export default class Timer {
                 accTime -= deltaTime;
             }
             lastTime = time;
+            
             this.enqueue ();
         }
     }
