@@ -15,6 +15,8 @@ Promise.all ([
     const gravity = 2000;
     melon.pos.set (64, 180);
 
+    level.entities.add (melon);
+
     const SPACE = 32;
     const input = new KeyboardState ();
 
@@ -32,7 +34,7 @@ Promise.all ([
     const timer = new Timer (1 / 60);
 
     timer.update = function update (deltaTime) {
-        melon.update (deltaTime);
+        level.update (deltaTime);
         level.comp.draw (context);
         melon.vel.y += gravity * deltaTime; 
     }
