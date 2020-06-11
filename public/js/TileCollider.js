@@ -1,6 +1,6 @@
 class TileResolver {
     constructor (matrix, tileSize = 16) {
-        this.matrix = matrix
+        this.matrix = matrix;
         this.tileSize = tileSize;
     }
     toIndex (pos) {
@@ -23,10 +23,13 @@ class TileResolver {
 }
 
 export default class TileCollider {
-    constructor (tiles) {
-        this.tiles = tiles;
+    constructor (tileMatrix) {
+        this.tiles = new TileResolver (tileMatrix);
     }
     test (entity) {
-        //console.log ("Testing", entity);
+        const match = this.tiles.matchByPosition (entity.pos.x, entity.pos.y);
+        if (match) {
+            console.log ("Matched", match, match.tile);
+        }
     }
 }
