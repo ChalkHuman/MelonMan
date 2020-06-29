@@ -1,16 +1,27 @@
 body {
     background: linear-gradient(
-        90deg, rgba(25,119,22,1) 0%,
-        rgba(43,152,37,1) 12.5%,
-        rgba(25,119,22,1) 25%,
-        rgba(43,152,37,1) 37.5%,
-        rgba(25,119,22,1) 50%,
-        rgba(43,152,37,1) 62.5%,
-        rgba(25,119,22,1) 75%,
-        rgba(43,152,37,1) 87.5%,
-        rgba(25,119,22,1) 100%
+        90deg, rgb(25,119,22) 0%,
+        rgb(43,152,37) 12.5%,
+        rgb(25,119,22) 25%,
+        rgb(43,152,37) 37.5%,
+        rgb(25,119,22) 50%,
+        rgb(43,152,37) 62.5%,
+        rgb(25,119,22) 75%,
+        rgb(43,152,37) 87.5%,
+        rgb(25,119,22) 100%
     );
+    background-size: 200% 200%;
+    animation: moveBackground 65s infinite;
 }
-.game {
-    border: 2px black;
+
+@keyframes moveBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 200% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
