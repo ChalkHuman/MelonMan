@@ -30,14 +30,17 @@ export function createCollisionLayer (level) {
     const getByIndexOriginal = tileResolver.getByIndex;
     tileResolver.getByIndex = function getByIndexFake (x, y) {
         resolvedTiles.push ({x, y});
+        debug ();
         return getByIndexOriginal.call (tileResolver, x, y);
     }
 
-    return function drawCollision (context) {
+    function debug (context = document.getElementById ("screen").getContext ("2d")) {
+        context.strokeStyle = "blue";
         resolvedTiles.forEach (({x, y}) => {
-            console.log ("draw", x, y);
+            context.beginPath ();
+            context.rect (x * tileSize, y * tileSize, tileSize, tileSize);
+            context.stroke ();
         });
-        
         resolvedTiles.length = 0;
     }
 }
