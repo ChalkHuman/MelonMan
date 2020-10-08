@@ -7,3 +7,5 @@ Basically a 2D side-scroller version of Rabbids Go Home
 but with watermelons
 
 because copyright
+
+# Basically abandoned now because I forgot what everything does :(
